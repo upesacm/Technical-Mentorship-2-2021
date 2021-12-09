@@ -1,0 +1,50 @@
+//Author: Sanskriti Gupta
+//Date: 9 December 2021
+//Aim: To check if a given number is armstrong or not using functions
+#include<stdio.h>
+#include<math.h>
+int armstrong();
+int main()
+{
+int number; //where num is the number to be checked
+printf("\nEnter ny number: ");
+scanf("%d",&number);
+armstrong(number);
+return 0;
+}
+int armstrong(int number)
+{
+int n,d=0,digits=0,i=1,x=0,num=0,s=0,d1=0;
+n=number;
+while(i<=n)
+{
+	x=i;
+	while(x!=0)
+	{
+		d=x%10;
+		digits++;
+		x=x/10;
+	}
+	num=i;
+	while(num!=0)
+	{
+		d1=num%10;
+		s=s+pow(d1,digits);
+		num=num/10;
+	}
+	if(i==s)
+	{
+		printf("\nThe number %d is armstrong\n",i);
+	}
+	else
+	{
+		printf("\nThe number %d is not an armstrong number\n",i);
+	}
+	d=0;
+	digits=0;
+	d1=0;
+	s=0;
+	i++;
+}
+return 0;
+}
